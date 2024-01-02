@@ -18,14 +18,14 @@ def sent_detector():
     """
     text_to_detect = request.args.get('textToAnalyze')
     
-    if not text_to_detect:
-        return jsonify({'error': 'Invalid request. Please provide textToAnalyze parameter.'}), 400
+    #if not text_to_detect:
+    #    return jsonify({'error': 'Invalid request. Please provide textToAnalyze parameter.'}), 400
 
     response = emotion_detector(text_to_detect)
     formated_response = emotion_predictor(response)
 
     if formated_response['dominant_emotion'] is None:
-        return jsonify({'error': 'Invalid text! Please try again.'}), 500
+        return 'Invalid text! Please try again.'
 
     return jsonify({
         'anger': formated_response['anger'],
