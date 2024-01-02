@@ -20,7 +20,7 @@ def emotion_detector(text_to_analyze):
                             'dominant_emotion': None}
         return formated_response
 
-def     (detected_text):
+def emotion_predictor(detected_text):
     if all(value is None for value in detected_text.values()):
         return detected_text
     if detected_text['emotionPredictions'] is not None:
