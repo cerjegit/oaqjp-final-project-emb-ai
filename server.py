@@ -25,7 +25,7 @@ def sent_detector():
     formated_response = emotion_predictor(response)
 
     if formated_response['dominant_emotion'] is None:
-        return 'Invalid text! Please try again.'
+        return 'Invalid text! Please try again!'
 
     return jsonify({
         'anger': formated_response['anger'],
